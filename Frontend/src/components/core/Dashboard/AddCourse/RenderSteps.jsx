@@ -30,7 +30,7 @@ export default function RenderSteps() {
           <>
             <div
               className="flex flex-col items-center "
-              key={item.id}
+              key={item._id}
             >
               <button
                 className={`grid cursor-default aspect-square w-[34px] place-items-center rounded-full border-[1px] ${

@@ -97,14 +97,14 @@ function Navbar() {
                               )
                               ?.map((subLink, i) => (
                                 <Link
-                                  to={`/catalog/${subLink.name
+                                  to={`/catalog/${subLink.title
                                     .split(" ")
                                     .join("-")
                                     .toLowerCase()}`}
                                   className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50"
                                   key={i}
                                 >
-                                  <p>{subLink.name}</p>
+                                  <p>{subLink.title}</p>
                                 </Link>
                               ))}
                           </>
