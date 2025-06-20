@@ -1,10 +1,10 @@
-import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast"
 
-import rzpLogo from "../../assets/Logo/rzp_logo.png";
-import { resetCart } from "../../slices/cartSlice";
-import { setPaymentLoading } from "../../slices/courseSlice";
-import { apiConnector } from "../apiConnector";
-import { studentEndpoints } from "../apis";
+import rzpLogo from "../../assets/Logo/rzp_logo.png"
+import { resetCart } from "../../slices/cartSlice"
+import { setPaymentLoading } from "../../slices/courseSlice"
+import { apiConnector } from "../apiConnector"
+import { studentEndpoints } from "../apis"
 
 const {
   COURSE_PAYMENT_API,
@@ -61,15 +61,12 @@ export async function BuyCourse(
 
     if (!orderResponse.data.success) {
       throw new Error(orderResponse.data.message)
-
     }
-
-    console.log("Razorpay Key:", process.env.REACT_APP_RAZORPAY_KEY);
     console.log("PAYMENT RESPONSE FROM BACKEND............", orderResponse.data)
 
     // Opening the Razorpay SDK
     const options = {
-      key: process.env.REACT_APP_RAZORPAY_KEY,
+      key: process.env.RAZORPAY_KEY,
       currency: orderResponse.data.data.currency,
       amount: `${orderResponse.data.data.amount}`,
       order_id: orderResponse.data.data.id,
